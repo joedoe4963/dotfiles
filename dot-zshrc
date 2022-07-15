@@ -1,0 +1,39 @@
+export ZSH="/home/databiz236/.oh-my-zsh"
+
+PAGER=less
+EDITOR=vim 
+# p10k configure to restart theme configuration
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases 
+
+plugins=(
+z
+git 
+colored-man-pages
+zsh-autosuggestions
+zsh-syntax-highlighting 
+)
+
+source $ZSH/oh-my-zsh.sh
+source /home/databiz236/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#ZSH_THEME="agnoster"
+
+# Preferred editor for local and remote sessions
+[[ -n $SSH_CONNECTION ]] &&  export EDITOR='vim'
+
+# SSH config passphrase
+$(ps -ef | grep -v grep | grep '/run/user/1000/openssh_agent' | awk '{print "kill -9 "$2}')
+#echo -n "ssh-agent: "
+AGENT_PID=$(pgrep -x ssh-agent)
+if [ $? -ne 0 ]
+then
+    ssh-agent -s > ~/.ssh/ssh-agent.var
+    source ~/.ssh/ssh-agent.var
+    ssh-add ~/.ssh/a.louhichi
+    echo "=== 💻 Connection etablished ====" 
+else
+    source ~/.ssh/ssh-agent.var
+fi

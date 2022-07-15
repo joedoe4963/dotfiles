@@ -1,0 +1,46 @@
+alias c="clear"
+alias cls="clear" 
+alias ee="exit" 
+alias mkdir="mkdir -pv"
+alias clip='xclip -selection clipboard'
+alias so="source"
+alias zshcon="vim  ~/.zshrc"
+alias zshup="source ~/.zshrc"
+alias zshis="vim ~/.zsh_history"
+alias zshal="vim ~/.bash_aliases"
+alias open="xdg-open" 
+alias tb="taskbook"
+alias labf="cd /home/databiz236/a.LOUHICHI/lab"
+alias workf="cd /home/databiz236/a.LOUHICHI/work/digital"
+alias dotf="cd ~/a.LOUHICHI/dotfiles"
+alias taskf="cd ~/a.LOUHICHI/tasks/"
+alias notef="cd /home/databiz236/a.LOUHICHI/notes"
+alias apif="cd /home/databiz236/a.LOUHICHI/work/api"
+alias b2bf="/home/databiz236/a.LOUHICHI/work/b2b/agency" 
+alias compf="/home/databiz236/a.LOUHICHI/work/component"
+alias b2cf="/home/databiz236/a.LOUHICHI/work/b2c"
+alias binf="cd ~/.local/bin"
+alias ttail="multitail  -c"
+alias search="firefox --search 2> /dev/null" 
+alias drm="docker rm -f $(docker ps -aq)" 
+alias gen-pass="openssl rand -base64 20"
+alias desc="tree -aL 1" 
+alias formf="~/formation"
+alias code="codium"
+alias show-git-stats='gst|lolcat -ad 10101010101010101010'
+alias check-sol-api="curl https://api-psa-exchange.shakazoola.local/"
+alias mks="make stop"
+alias mkst="make start"
+#used to fetch jwt token 
+alias gen-token="curl --request POST \
+    --url 'https://stg-api.shakazoola.com/users/v1/auth?ver=2' \
+      --header 'Authorization: Basic d2lkZ2V0c29sOmF1dG9iaXpzb2w=' \
+        --header 'password: autobizsol' \
+          --header 'username: widgetsol' \
+          --cookie SERVERID=OP30"
+
+alias ds="docker stats"
+#setup history format 
+HISTTIMEFORMAT="%d/%m/%y %T "
+export HISTTIMEFORMAT
+

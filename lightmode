@@ -1,0 +1,15 @@
+#!/bin/bash 
+
+#VARIABLES
+ 
+NOTIF="Light mode is activated" 
+DIR="$HOME/Images/wallpapers/light"
+PIC=$(ls $DIR/*|shuf -n1)
+
+echo $NOTIF
+notify-send -u normal $NOTIF
+
+gsettings set org.gnome.desktop.background picture-uri file://$PIC 
+
+exit; 
+
